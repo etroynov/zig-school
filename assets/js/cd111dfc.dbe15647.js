@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkzig_school=self.webpackChunkzig_school||[]).push([[6143],{9870:o=>{o.exports=JSON.parse('{"label":"facebook","permalink":"/zig-school/blog/tags/facebook","allTagsPath":"/zig-school/blog/tags","count":1}')}}]);

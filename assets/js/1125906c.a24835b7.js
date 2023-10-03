@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkzig_school=self.webpackChunkzig_school||[]).push([[2646],{5810:o=>{o.exports=JSON.parse('{"permalink":"/zig-school/blog/tags/hello","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
