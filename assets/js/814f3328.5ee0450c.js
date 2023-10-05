@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkzig_school=self.webpackChunkzig_school||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome to Zig School","permalink":"/zig-school/blog/welcome-to-zig-school"}]}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkzig_school=self.webpackChunkzig_school||[]).push([[1658],{8817:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/zig-school/blog/tags/docusaurus","allTagsPath":"/zig-school/blog/tags","count":4}')}}]);
