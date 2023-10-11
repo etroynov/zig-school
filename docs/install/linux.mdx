@@ -1,0 +1,50 @@
+---
+title: 🐧 Linux
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Linux
+
+<Tabs>
+
+<TabItem value="ubuntu" label="Ubuntu/Debian" default>
+
+```sh
+snap install zig --classic --beta
+```
+
+</TabItem>
+
+<TabItem value="fedora" label="Fedora">
+
+```sh
+dnf install zig
+```
+
+</TabItem>
+
+<TabItem value="arch" label="Arch">
+
+```sh
+pacman -S zig
+```
+
+</TabItem>
+
+
+<TabItem value="gentoo" label="Gentoo">
+
+```sh
+# Building from sources
+emerge -av dev-lang/zig
+
+# Official ziglang.org static build
+emerge -av dev-lang/zig-bin
+```
+
+</TabItem>
+
+</Tabs>
