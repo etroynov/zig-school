@@ -1,0 +1,44 @@
+---
+title: ⊞ Windows
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Windows
+
+<Tabs>
+
+<TabItem value="winget" label="WinGet" default>
+
+```sh
+winget install -e --id zig.zig
+```
+
+</TabItem>
+
+<TabItem value="chocolatey" label="Chocolatey">
+
+```sh
+choco install zig
+```
+
+</TabItem>
+
+<TabItem value="scoop" label="Scoop">
+
+```sh
+scoop install zig
+```
+
+Latest [dev build](https://scoop.sh/#/apps?q=zig&id=921df07e75042de645204262e784a17c2421944c)
+
+```sh
+scoop bucket add versions
+scoop install versions/zig-dev
+```
+
+</TabItem>
+
+</Tabs>
