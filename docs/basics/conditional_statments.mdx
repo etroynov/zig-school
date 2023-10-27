@@ -1,0 +1,46 @@
+---
+title: Conditional Statements (if, else)
+sidebar_position: 2
+---
+
+The `if(...)` instruction only accept **bool** values:
+* `true`;
+* `false`;
+
+Example:
+```go
+const std = @import("std");
+
+pub fn main() !void {
+  const stdout = std.io.getStdOut().writer();
+  var statment = true;
+
+  if (statment) {
+    try stdout.print("Hello {s}\n", .{"world"});
+  } else {
+    try stdout.print("It was false :(");
+  }
+}
+```
+:::caution
+Zig does not support truthy or falsy values, it means if you will try to use as example `0` in if statment you will get an error. 
+:::
+
+Example:
+```go
+const std = @import("std");
+
+pub fn main() !void {
+  const stdout = std.io.getStdOut().writer();
+
+  if (0) {
+    try stdout.print("Hello {s}\n", .{"world"});
+  }
+}
+```
+
+Result:
+```bash
+example.zig:6:7: error: expected type 'bool', found 'comptime_int'
+  if (0) {
+```
