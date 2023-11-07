@@ -1,0 +1,32 @@
+---
+title: 🚀 Hello world
+sidebar_position: 4
+---
+
+The first of all create a new file `main.zig`, for it execute this command in you project folder:
+```bash
+$ touch main.zig
+```
+
+:::tip
+Make sure your file is using spaces for indentation, LF line endings and UTF-8 encoding!
+:::
+
+After file create, open `main.zig` in your code editor and put this lines into it:
+```rust
+const std = @import("std");
+
+pub fn main() void {
+    std.debug.print("Hello, {s}!\n", .{"World"});
+}
+```
+
+Save changes and then run the command next command in the terminal:
+```bash
+$ zig run main.zig
+```
+
+The program will print next line in console:
+```bash
+Hello world
+```
