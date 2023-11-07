@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkzig_school=self.webpackChunkzig_school||[]).push([[406],{8782:i=>{i.exports=JSON.parse('{"title":"Introduction","slug":"/category/introduction","permalink":"/zig-school/docs/category/introduction","navigation":{"next":{"title":"\ud83d\udca1 What is Zig?","permalink":"/zig-school/docs/what_is_zig"}}}')}}]);
