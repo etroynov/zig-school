@@ -1,0 +1,98 @@
+---
+title: Loops (While, For)
+slug: /for-while-loops
+sidebar_position: 4
+---
+
+# While
+
+The loop has three parts - a condition, a block and a continue expression.
+
+## Basic
+
+```rust
+const std = @import("std");
+
+pub fn main() !void {
+  const stdout = std.io.getStdOut().writer();
+  var i: i16 = 0;
+
+  while(i < 10) {
+    i += 1;
+    try stdout.print("{}\n", .{i});
+  }
+}
+```
+
+## With a continue expression
+
+```rust
+const std = @import("std");
+
+pub fn main() !void {
+  const stdout = std.io.getStdOut().writer();
+  var i: i16 = 0;
+
+  while(i < 10): (i += 1) {
+    try stdout.print("{}\n", .{i});
+  }
+}
+```
+
+Note: continue expression will be executed before check
+
+## With a `continue`
+
+```rust
+const std = @import("std");
+
+pub fn main() !void {
+  const stdout = std.io.getStdOut().writer();
+  var i: i16 = 0;
+
+  while(i < 10): (i += 1) {
+    if (@mod(i, 2) == 0) continue;
+    try stdout.print("{}\n", .{i});
+  }
+}
+```
+
+## With a `break`
+
+```rust
+const std = @import("std");
+
+pub fn main() !void {
+  const stdout = std.io.getStdOut().writer();
+  var i: i16 = 0;
+
+  while(i < 10): (i += 1) {
+    if (i > 5) break;
+    try stdout.print("{}\n", .{i});
+  }
+}
+```
+
+# For
+
+For loops are used to iterate over arrays (and other types, to be discussed later). For loops follow this syntax. Like while, for loops can use break and continue. Here, we’ve had to assign values to _, as Zig does not allow us to have unused values.
+
+```rust
+//character literals are equivalent to integer literals
+const string = [_]u8{ 'a', 'b', 'c' };
+
+for (string, 0..) |character, index| {
+  _ = character;
+  _ = index;
+}
+
+for (string) |character| {
+  _ = character;
+}
+
+for (string, 0..) |_, index| {
+  _ = index;
+}
+
+for (string) |_| {}
+```
