@@ -13,7 +13,7 @@ Make sure your file is using spaces for indentation, LF line endings and UTF-8 e
 :::
 
 After file create, open `main.zig` in your code editor and put this lines into it:
-```rust
+```zig title="~/example/main.zig"
 const std = @import("std");
 
 pub fn main() void {
@@ -22,11 +22,7 @@ pub fn main() void {
 ```
 
 Save changes and then run the command next command in the terminal:
-```bash
-$ zig run main.zig
-```
-
-The program will print next line in console:
-```bash
-Hello world
+```bash title="~/example via ↯ v0.11.0 took 4s"
+➜ zig run main.zig
+Hello, World!
 ```
