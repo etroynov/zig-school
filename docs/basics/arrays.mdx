@@ -1,6 +1,6 @@
 ---
 title: Arrays
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Arrays
@@ -8,22 +8,22 @@ sidebar_position: 3
 The type **[n]T** is an array of **n** values of type **T** (i.e., the array's child type).
 
 The expression
-```rust
+```zig
 const a = [5]u8{ 'h', 'e', 'l', 'l', 'o' };
 ```
 
 For array literals, *N* may be replaced by `_` to infer the size of the array.
-```rust
+```zig
 const b = [_]u8{ 'w', 'o', 'r', 'l', 'd' };
 ```
 
 To get the size of an array, simply access the array's len field.
-```rust
+```zig
 const b = [_]u8{ 'w', 'o', 'r', 'l', 'd' };
 ```
 
 To get the size of an array, simply access the array's len field.
-```rust
+```zig
 const array = [_]u8{ 'h', 'e', 'l', 'l', 'o' };
 const length = array.len; // 5
 ```

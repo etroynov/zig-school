@@ -1,4 +1,5 @@
-import { themes } from "prism-react-renderer";
+import {themes as prismThemes} from 'prism-react-renderer';
+
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
@@ -125,8 +126,9 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} The Zig School Team.`,
     },
     prism: {
-      theme: themes.github,
-      darkTheme: themes.dracula,
+      additionalLanguages: ['bash', 'zig'],
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 };

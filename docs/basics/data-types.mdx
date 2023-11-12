@@ -1,0 +1,306 @@
+---
+title: Data types
+sidebar_position: 2
+---
+
+## Primitive Types
+
+### Integers
+
+The requirement to express numeric values with limited resources drove the creation of signed vs. unsigned numbers. When utilizing 8 bits, there are only 256 possible combinations. Any value between 0 and 255 is considered an **unsigned** number. On the other hand, having a **signed** number means you've already lost a bit for representing the sign. With 7 bits, you can only have 128 permutations. Hence an 8-bit signed number's range is -128 to 127. Using unsigned numbers was the way to go if you had limited resources, which was the case in the early days of computers.
+
+- Unsigned integers range from `0` to `4,294,967,295` or around 4 billion in 32-bit integers. 
+- The signed version ranges from `–2,147,483,648` to `2,147,483,647`, or around -2 billion to +2 billion. The range is the same, but the values are shifted on the number line.
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col" width="30%">C Equivalent</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th align="center" colSpan={3}>Signed</th>
+    </tr>
+
+    <tr>
+      <td align="center">`i8`</td>
+      <td align="center">`int8_t`</td>
+      <td width="100%">8-bit integer</td>
+    </tr>
+
+    <tr>
+      <td align="center">`i16`</td>
+      <td align="center">`int16_t`</td>
+      <td width="100%">16-bit integer</td>
+    </tr>
+   
+    <tr>
+      <td align="center">`i32`</td>
+      <td align="center">`int32_t`</td>
+      <td width="100%">32-bit integer</td>
+    </tr>
+
+    <tr>
+      <td align="center">`i64`</td>
+      <td align="center">`int64_t`</td>
+      <td width="100%">64-bit integer</td>
+    </tr>
+
+    <tr>
+      <td align="center">`i128`</td>
+      <td align="center">`int128_t`</td>
+      <td width="100%">128-bit integer</td>
+    </tr>
+
+    <tr>
+      <td align="center">`isize`</td>
+      <td align="center">`intptr_t`</td>
+      <td width="100%">signed pointer sized integer</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_char`</td>
+      <td align="center">`char`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_short`</td>
+      <td align="center">`short`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_int`</td>
+      <td align="center">`int`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_long`</td>
+      <td align="center">`long`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_longlong`</td>
+      <td align="center">`long long`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_longdouble`</td>
+      <td align="center">`long double`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <th align="center" colSpan={3}>Unsigned</th>
+    </tr>
+
+    <tr>
+      <td align="center">`u8`</td>
+      <td align="center">`uint8_t`</td>
+      <td width="100%">8-bit integer</td>
+    </tr>
+
+    <tr>
+      <td align="center">`u16`</td>
+      <td align="center">`uint16_t`</td>
+      <td width="100%">16-bit integer</td>
+    </tr>
+   
+    <tr>
+      <td align="center">`u32`</td>
+      <td align="center">`unt32_t`</td>
+      <td width="100%">32-bit integer</td>
+    </tr>
+
+    <tr>
+      <td align="center">`u64`</td>
+      <td align="center">`unt64_t`</td>
+      <td width="100%">64-bit integer</td>
+    </tr>
+
+    <tr>
+      <td align="center">`u128`</td>
+      <td align="center">`unt128_t`</td>
+      <td width="100%">128-bit integer</td>
+    </tr>
+    
+    <tr>
+      <td align="center">`usize`</td>
+      <td align="center">`uintptr_t`, `size_t`</td>
+      <td width="100%">unsigned pointer sized integer. Also see [#5185](https://github.com/ziglang/zig/issues/5185)</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_uchar`</td>
+      <td align="center">`unsigned char`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_ushort`</td>
+      <td align="center">`unsigned short`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_uint`</td>
+      <td align="center">`unsigned int`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_ulong`</td>
+      <td align="center">`unsigned long`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_ulonglong`</td>
+      <td align="center">`unsigned long long`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+
+    <tr>
+      <td align="center">`c_longdouble`</td>
+      <td align="center">`long double`</td>
+      <td width="100%">for ABI compatibility with C</td>
+    </tr>
+  </tbody>
+</table>
+
+:::note
+In addition to the integer types above, arbitrary bit-width integers can be referenced by using an identifier of i or u followed by digits. For example, the identifier i7 refers to a signed 7-bit integer. The maximum allowed bit-width of an integer type is 65535.
+:::
+
+### Floats
+
+"float" is a data type used to represent floating-point numbers. Floating-point numbers are used to represent real numbers, including both rational and irrational numbers, with a certain degree of precision.
+
+Here are some key characteristics of float numbers:
+
+- Precision: Floats have limited precision, which means they can represent a finite number of decimal places accurately. The precision of a float is typically around 6-9 significant decimal digits.
+
+- Range: Floats can represent a wide range of values, both large and small, with an exponent ranging from -38 to 38 (approximately). However, as the magnitude of the number increases or decreases, the precision decreases.
+
+- Representation: Floats are typically represented in scientific notation, consisting of a sign bit, a mantissa (also known as the significand or fraction), and an exponent. This representation allows for a wide dynamic range.
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col" width="30%">C Equivalent</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td align="center">`f16`</td>
+      <td align="center">`_Float16`</td>
+      <td width="100%">16-bit floating point (10-bit mantissa) IEEE-754-2008 binary16</td>
+    </tr>
+
+    <tr>
+      <td align="center">`f32`</td>
+      <td align="center">`float`</td>
+      <td width="100%">32-bit floating point (23-bit mantissa) IEEE-754-2008 binary32</td>
+    </tr>
+
+    <tr>
+      <td align="center">`f64`</td>
+      <td align="center">`double`</td>
+      <td width="100%">64-bit floating point (52-bit mantissa) IEEE-754-2008 binary64</td>
+    </tr>
+
+    <tr>
+      <td align="center">`f80`</td>
+      <td align="center">`double`</td>
+      <td width="100%">80-bit floating point (64-bit mantissa) IEEE-754-2008 80-bit extended precision</td>
+    </tr>
+
+    <tr>
+      <td align="center">`f128`</td>
+      <td align="center">`_Float128`</td>
+      <td width="100%">128-bit floating point (112-bit mantissa) IEEE-754-2008 binary128</td>
+    </tr>
+  </tbody>
+</table>
+
+### Boolean
+
+The Boolean data type is a fundamental concept in programming languages. It represents one of the simplest forms of data: truth values.
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col" width="30%">C Equivalent</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">`bool`</td>
+      <td align="center">`bool`</td>
+      <td width="100%">it can be `true` or `false`</td>
+    </tr>
+  </tbody>
+</table>
+
+### Other
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col" width="30%">C Equivalent</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">`anyopaque`</td>
+      <td align="center">`void`</td>
+      <td width="100%">Used for type-erased pointers</td>
+    </tr>
+
+    <tr>
+      <td align="center">`void`</td>
+      <td align="center">`-`</td>
+      <td width="100%">Always the value void{}</td>
+    </tr>
+    <tr>
+      <td align="center">`noreturn`</td>
+      <td align="center">`-`</td>
+      <td width="100%">	the type of **break**, **continue**, **return**, **unreachable**, and **while** (true) {}</td>
+    </tr>
+    <tr>
+      <td align="center">`type`</td>
+      <td align="center">`-`</td>
+      <td width="100%">the type of types</td>
+    </tr>
+    <tr>
+      <td align="center">`anyerror`</td>
+      <td align="center">`-`</td>
+      <td width="100%">An error code</td>
+    </tr>
+    <tr>
+      <td align="center">`comptime_int`</td>
+      <td align="center">`-`</td>
+      <td width="100%">Only allowed for comptime-known values. The type of integer literals.</td>
+    </tr>
+    <tr>
+      <td align="center">`comptime_float`</td>
+      <td align="center">`-`</td>
+      <td width="100%">Only allowed for comptime-known values. The type of integer literals.</td>
+    </tr>
+  </tbody>
+</table>
+

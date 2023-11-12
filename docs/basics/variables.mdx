@@ -3,9 +3,12 @@ title: Variables
 sidebar_position: 1
 ---
 
-Syntax:
-```
+```bash title="Syntax"
 <keyword> <name> : <type> = <value>
+```
+
+```zig  title="~/example"
+var foo: i8 = 0;
 ```
 
 ### Keyword
@@ -21,3 +24,55 @@ Any name would you like
 ### Type
 
 Type is a type annotation for identifier, and may be omitted if the data type of value can be inferred.
+
+## Examples
+
+### Var
+
+We can replace value of varibale that was defined with `var` keyword:
+
+```zig  title="~/example"
+const std = @import("std");
+
+pub fn main() !void {
+  const stdout = std.io.getStdOut().writer();
+  var i: i16 = 0;
+
+  i += 1;
+  
+  try stdout.print("{d}\n", .{i});
+}
+```
+
+```bash title="~/example via ↯ v0.11.0 took 4s"
+➜ zig run main.zig
+1
+```
+
+### Const
+
+If we try to reasign the value of variable that was defined with the `const` keyword we will get an error:
+
+```zig title="~/example"
+const std = @import("std");
+
+pub fn main() !void {
+  const stdout = std.io.getStdOut().writer();
+  const i: i16 = 0;
+
+  i += 1;
+
+  try stdout.print("{d}\n", .{i});
+}
+```
+
+```bash title="~/example via ↯ v0.11.0 took 6s"
+➜ zig run main.zig
+example.zig:7:5: error: cannot assign to constant
+  i += 1;
+  ~~^~~~
+referenced by:
+    callMain: /usr/local/Homebrew/Cellar/zig/0.11.0/lib/zig/std/start.zig:574:32
+    initEventLoopAndCallMain: /usr/local/Homebrew/Cellar/zig/0.11.0/lib/zig/std/start.zig:508:34
+    remaining reference traces hidden; use '-freference-trace' to see all reference traces
+```

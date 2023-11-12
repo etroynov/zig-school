@@ -1,16 +1,16 @@
 ---
 title: Loops (While, For)
 slug: /for-while-loops
-sidebar_position: 4
+sidebar_position: 5
 ---
 
-# While
+## While
 
 The loop has three parts - a condition, a block and a continue expression.
 
-## Basic
+### Basic
 
-```rust
+```rust title="~/example/main.zig"
 const std = @import("std");
 
 pub fn main() !void {
@@ -24,9 +24,9 @@ pub fn main() !void {
 }
 ```
 
-## With a continue expression
+### With a continue expression
 
-```rust
+```zig title="~/example/main.zig"
 const std = @import("std");
 
 pub fn main() !void {
@@ -41,9 +41,9 @@ pub fn main() !void {
 
 Note: continue expression will be executed before check
 
-## With a `continue`
+### With a `continue`
 
-```rust
+```zig title="~/example/main.zig"
 const std = @import("std");
 
 pub fn main() !void {
@@ -57,9 +57,9 @@ pub fn main() !void {
 }
 ```
 
-## With a `break`
+### With a `break`
 
-```rust
+```zig title="~/example/main.zig"
 const std = @import("std");
 
 pub fn main() !void {
@@ -73,11 +73,11 @@ pub fn main() !void {
 }
 ```
 
-# For
+## For
 
 For loops are used to iterate over arrays (and other types, to be discussed later). For loops follow this syntax. Like while, for loops can use break and continue. Here, we’ve had to assign values to _, as Zig does not allow us to have unused values.
 
-```rust
+```zig title="~/example/main.zig"
 //character literals are equivalent to integer literals
 const string = [_]u8{ 'a', 'b', 'c' };
 
